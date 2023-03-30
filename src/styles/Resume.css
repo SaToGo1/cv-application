@@ -1,0 +1,13 @@
+/* Din A4 size*/
+.Resume {
+    margin: 27mm 16mm 27mm 16mm;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Resume__body {
+    width: 1240px;
+    height: 1754px;
+    border: 1px solid black;
+}

@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import Header from './components/Header';
+import React, { Component } from 'react'
+import Header from './components/Header'
+import Resume from './components/Resume'
 
 class App extends Component {
   constructor(){
@@ -11,6 +12,7 @@ class App extends Component {
     return(
       <div className='App'>
         <Header />
+        <Resume />
       </div>
     )
   }

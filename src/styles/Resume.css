@@ -10,4 +10,36 @@
     width: 1240px;
     height: 1754px;
     border: 1px solid black;
+
+    display: grid;
+
+    grid-template-columns: 1fr 10fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+    grid-template-areas: 
+    "border personalInformation"
+    "border Experience"
+    "border Education"
+    ;
+}
+
+.Resume__border { 
+    border: 1px solid red;
+    background-color: var(--color-grey);
+    grid-area: border;
+}
+
+.Resume__personalInformation {
+    border: 1px solid red;
+    grid-area: personalInformation;
+}
+
+.Resume__Education {
+    border: 1px solid red;
+    grid-area: Education;
+}
+
+.Resume__Experience {
+    border: 1px solid red;
+    grid-area: Experience;
 }

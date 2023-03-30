@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
 
 class App extends Component {
   constructor(){
@@ -10,7 +9,7 @@ class App extends Component {
 
     return(
       <div>
-        Init
+        
       </div>
     )
   }

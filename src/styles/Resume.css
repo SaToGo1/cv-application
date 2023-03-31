@@ -26,7 +26,6 @@
 }
 
 .Resume__content {
-    border: 1px solid red;
     grid-area: content;
 
     display: flex;

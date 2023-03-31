@@ -11,27 +11,25 @@ class PersonalInformation extends Component{
     render(){
         return(
             <div className='PersonalInformation'>
-                <div className='PersonalInformation__rightSide'>
-                    <div className='PersonalInformation__NameDiv'>
-                        <p className='PersonalInformation__name'>Name</p>
-                        <p className='PersonalInformation__name'>Surname</p>
+                <div className='PerInfo__rightSide'>
+                    <div className='PerInfo__NameDiv'>
+                        <p className='PerInfo__name'>Name</p>
+                        <p className='PerInfo__name'>Surname</p>
                     </div>
                     <div>
-                        <p className='PersonalInformation__title'>Title</p>
+                        <p className='PerInfo__title'>Title</p>
                     </div>
                 </div>
-                <div className='PersonalInformation__leftSide'>
-                    <div className='PersonalInformation__iconData'>
-                        <img src={atIcon} alt='e-mail' className='PersonalInformation__icon' />
+                <div className='PerInfo__leftSide'>
+                    <div className='PerInfo__iconData'>
+                        <img src={atIcon} alt='e-mail' className='PerInfo__icon' />
                         <p>E-mail</p>
                     </div>
-                    <div className='PersonalInformation__iconData'>
-                        <img src={phoneIcon} alt='phone' className='PersonalInformation__icon' />
+                    <div className='PerInfo__iconData'>
+                        <img src={phoneIcon} alt='phone' className='PerInfo__icon' />
                         <p>Telephone</p>
                     </div>
                 </div>
-
-                <hr className="rounded"></hr>
             </div>
         )
     }

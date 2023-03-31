@@ -15,7 +15,9 @@ class Resume extends Component {
                     <div className='Resume__border'></div>
                     <div className='Resume__content'> 
                         <PersonalInformation />
+                        <hr className="rounded"></hr>
                         <div> Education </div>
+                        <hr className="rounded"></hr>
                         <div> Experience </div>
                     </div>
                 </div>

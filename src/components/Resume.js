@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import '../styles/Resume.css'
 import PersonalInformation from './PersonalInformation'
 import Education from './Education'
+import Experience from './Experience'
 
 class Resume extends Component {
     constructor(){
@@ -17,9 +18,9 @@ class Resume extends Component {
                     <div className='Resume__content'> 
                         <PersonalInformation />
                         <hr className="rounded"></hr>
-                        <Education />
+                        <Experience />
                         <hr className="rounded"></hr>
-                        <div> Experience </div>
+                        <Education />
                     </div>
                 </div>
             </div>

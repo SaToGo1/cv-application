@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../styles/EducationAndExperience.css'
 
-class Education extends Component {
+class Experience extends Component {
     constructor() {
         super();
     }
@@ -9,7 +9,7 @@ class Education extends Component {
     render(){
         return (
             <div className='Education'>
-                <h2 className='Edu__Title'>Education</h2>
+                <h2 className='Edu__Title'>Experience</h2>
                 <div className='Edu__unit'>
                     <div>
                         <h4 className='margin0 Edu__city'>City</h4>
@@ -20,8 +20,8 @@ class Education extends Component {
                         </div>
                     </div>
                     <div>
-                        <h3 className='Edu__sectionTitle'>University Title</h3>
-                        <p className='Edu__sectionSubTitle'>Degree Title</p>
+                        <h3 className='Edu__sectionTitle'>Role</h3>
+                        <p className='Edu__sectionSubTitle'>Company</p>
                         <p className='Edu__description'>
                             Description <br/>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.
@@ -37,4 +37,4 @@ class Education extends Component {
     }
 }
 
-export default Education;
+export default Experience;

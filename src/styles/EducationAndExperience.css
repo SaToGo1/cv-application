@@ -25,14 +25,14 @@
     gap: 5px;
 }
 
-.Edu__universityName {
+.Edu__sectionTitle {
     margin-top: 0;
     margin-bottom: 0;
 
     font-size: 1.5em;
 }
 
-.Edu__degreeTitle {
+.Edu__sectionSubTitle {
     margin: 0;
     margin-bottom: 15px;
 

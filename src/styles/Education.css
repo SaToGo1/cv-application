@@ -1,0 +1,100 @@
+.Education {
+    margin-left: var(--margin-left-resume);
+    margin-right: var(--margin-right-resume);
+}
+
+.Edu__Title {
+    text-align: center;
+    margin-top: 0;
+
+    font-size: 2em;
+}
+
+.Edu__unit {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 50px;
+}
+
+.Edu__city {
+    font-size: 1.2em;
+}
+
+.Edu__dateDiv {
+    display: flex;
+    gap: 5px;
+}
+
+.Edu__universityName {
+    margin-top: 0;
+    margin-bottom: 0;
+
+    font-size: 1.5em;
+}
+
+.Edu__degreeTitle {
+    margin: 0;
+    margin-bottom: 15px;
+
+    font-size: 1.2em;
+}
+
+.Edu__description {
+    margin: 0;
+}
+
+.margin0 {
+    margin: 0;
+}
+
+.Edu__deleteButton {
+    background-color: var(--color-background);
+    border: none;
+
+    width: 90px;
+    padding: 15px 10px;
+    border: 1px solid var(--color-grey);
+    border-radius: 15px;
+
+    
+    color: rgb(160, 2, 2);
+    cursor: pointer;
+}
+
+.Edu__deleteButton:hover {
+    background-color: #DEDEDE;
+}
+
+.Edu__deleteButton:active {
+    background-color: #CECECE;
+}
+
+.Edu__deleteButtonDiv {
+    padding: 20px 0px;
+}
+
+.Edu__addButton {
+    margin-bottom: 50px;
+    position: relative;
+    left: 46%;
+    width: 90px;
+
+    background-color: var(--color-background);
+    border: none;
+
+    padding: 10px 30px;
+    border: 1px solid var(--color-grey);
+    border-radius: 15px;
+
+    
+    color: var(--color-teal);
+    cursor: pointer;
+}
+
+.Edu__addButton:hover {
+    background-color: #DEDEDE;
+}
+
+.Edu__addButton:active {
+    background-color: #CECECE;
+}

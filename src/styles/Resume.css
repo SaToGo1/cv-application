@@ -1,4 +1,11 @@
 /* Din A4 size*/
+
+:root {
+    --margin-left-resume: 30px;
+    --margin-right-resume: 30px;
+    --margin-hr: 50px;
+}
+
 .Resume {
     margin: 27mm 16mm 27mm 16mm;
     display: flex;
@@ -45,4 +52,6 @@ hr.rounded {
     border: 2px solid var(--color-black);
     background-color: var(--color-black);
     border-radius: 5px;
+
+    margin-bottom: var(--margin-hr);
 }

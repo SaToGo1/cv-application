@@ -3,7 +3,7 @@ import '../styles/PersonalInformation.css'
 import atIcon from '../img/at.svg'
 import phoneIcon from '../img/phone.svg'
 
-class PersonalInformation extends Component{
+class PersonalInformation extends Component {
     constructor(){
         super()
     }

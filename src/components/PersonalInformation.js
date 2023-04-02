@@ -11,11 +11,13 @@ class PersonalInformation extends Component {
             showNameInput: false,
             showSurNameInput: false,
             showTitleInput: false,
+            showMailInput: false,
+            showTelephoneInput: false,
             information: {
                 name: "name",
                 surname: "surname",
                 title: "Title",
-                mail: "mail",
+                mail: "E-mail",
                 telephone: "telephone"
             },
         };
@@ -81,6 +83,44 @@ class PersonalInformation extends Component {
         }
 
 /*  =============== 
+    Mail Handlers
+    =============== */
+        handleMailClick = () => {
+            this.setState ({
+                showMailInput: true,
+            })
+        }
+
+        handleMailChange = (e) => {
+            const information = this.state.information;
+            this.setState ({
+                information: {
+                    ...information,
+                    mail: e.target.value,
+                },
+            })
+        }
+
+/*  =============== 
+    Telephone Handlers
+    =============== */
+        handleTelephoneClick = () => {
+            this.setState ({
+                showTelephoneInput: true,
+            })
+        }
+
+        handleTelephoneChange = (e) => {
+            const information = this.state.information;
+            this.setState ({
+                information: {
+                    ...information,
+                    telephone: e.target.value,
+                },
+            })
+        }
+
+/*  =============== 
     General Handlers
     =============== */
 
@@ -90,6 +130,8 @@ class PersonalInformation extends Component {
                 showNameInput: false,
                 showSurNameInput: false,
                 showTitleInput: false,
+                showMailInput: false,
+                showTelephoneInput: false,
             })
         }
     }
@@ -99,12 +141,14 @@ class PersonalInformation extends Component {
             showNameInput: false,
             showSurNameInput: false,
             showTitleInput: false,
+            showMailInput: false,
+            showTelephoneInput: false,
         })
     }
 
     render(){
         const { name, surname, title, mail, telephone } = this.state.information;
-        const { showNameInput, showSurNameInput, showTitleInput } = this.state;
+        const { showNameInput, showSurNameInput, showTitleInput, showMailInput, showTelephoneInput } = this.state;
 
         return(
             <div className='PersonalInformation'>
@@ -180,11 +224,47 @@ class PersonalInformation extends Component {
                 <div className='PerInfo__leftSide'>
                     <div className='PerInfo__iconData'>
                         <img src={atIcon} alt='e-mail' className='PerInfo__icon' />
-                        <p>{mail}</p>
+                        {!showMailInput && (
+                            <p
+                                onClick={this.handleMailClick}
+                            >
+                                {mail}
+                            </p> 
+                        )}
+
+                        {showMailInput && (
+                            <input
+                                type='text' 
+                                autoFocus 
+                                className='PerInfo__Input'
+                                value={mail}
+                                onChange={this.handleMailChange}
+                                onBlur={this.handleFocusOut}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        )}
                     </div>
                     <div className='PerInfo__iconData'>
                         <img src={phoneIcon} alt='phone' className='PerInfo__icon' />
-                        <p>{telephone}</p>
+                        {!showTelephoneInput && (
+                            <p
+                                onClick={this.handleTelephoneClick}
+                            >
+                                {telephone}
+                            </p> 
+                        )}
+
+                        {showTelephoneInput && (
+                            <input
+                                type='text' 
+                                autoFocus 
+                                className='PerInfo__Input'
+                                value={telephone}
+                                onChange={this.handleTelephoneChange}
+                                onBlur={this.handleFocusOut}
+                                onKeyDown={this.handleKeyDown}
+                            />
+                        )}
                     </div>
                 </div>
             </div>

@@ -8,6 +8,7 @@ class Education extends Component {
         super();
 
         this.state = {
+            showAddForm: false,
             EducationUnitArray: [{
                 id: uniqid(),
                 city: "City",
@@ -15,7 +16,7 @@ class Education extends Component {
                 date2: "date2",
                 universityTitle: "UniversityTitle",
                 degreeTitle: "Degree Title",
-                description: `Description ${(<br/>)}
+                description: `Description
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.`,
             }],
 
@@ -30,8 +31,14 @@ class Education extends Component {
         })
     }
 
+    handleAddButtonShow = () => {
+        this.setState({
+            showAddForm: true,
+        })
+    }
+
     render(){
-        const { EducationUnitArray } = this.state;
+        const { EducationUnitArray, showAddForm } = this.state;
         return (
             <div className='Education'>
                 <h2 className='Edu__Title'>Education</h2>
@@ -50,7 +57,47 @@ class Education extends Component {
                             />
                         )
                     })}
-                <button className='Edu__addButton'>Add</button>
+                {!showAddForm && (
+                    <button 
+                        className='Edu__addButton'
+                        onClick={this.handleAddButtonShow}
+                    >
+                        Add
+                    </button>
+                )}
+                {showAddForm && (
+                    <div>
+                        <form>
+                            <div>
+                                <div>
+                                    <label for="Edu_city">city</label>
+                                    <input type="text" name="Edu_city" id="Edu_city" />
+                                </div>
+                                <div>
+                                    <label for="Edu_date1">date1</label>
+                                    <input type="text" name="Edu_city" id="Edu_city" />
+
+                                    <label for="Edu_date1">date2</label>
+                                    <input type="text" name="Edu_city" id="Edu_city" />
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <label for="Edu_universityName">University Name</label>
+                                    <input type="text" name="Edu_universityName" id="Edu_universityName" />
+                                </div>
+                                <div>
+                                    <label for="Edu_degreeTitle">Degree Title</label>
+                                    <input type="text" name="Edu_degreeTitle" id="Edu_degreeTitle" />
+                                </div>
+                            </div>
+                        </form>
+                        <div>
+                            <button>Add</button>
+                            <button>Cancel</button>
+                        </div>
+                    </div>
+                )}
             </div>
         )
     }

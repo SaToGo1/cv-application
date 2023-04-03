@@ -38,6 +38,8 @@
             color: var(--color-grey);
 
             font-size: 35px;
+
+            cursor: pointer;
         }
 
 .PerInfo__leftSide {
@@ -58,4 +60,6 @@
         display: flex;
         align-items: center;
         gap: 10px;
+
+        cursor: pointer;
     }

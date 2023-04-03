@@ -222,7 +222,9 @@ class PersonalInformation extends Component {
                     </div>
                 </div>
                 <div className='PerInfo__leftSide'>
-                    <div className='PerInfo__iconData'>
+                    <div className='PerInfo__iconData'
+                        onClick={this.handleMailClick}
+                    >
                         <img src={atIcon} alt='e-mail' className='PerInfo__icon' />
                         {!showMailInput && (
                             <p
@@ -244,7 +246,9 @@ class PersonalInformation extends Component {
                             />
                         )}
                     </div>
-                    <div className='PerInfo__iconData'>
+                    <div className='PerInfo__iconData'
+                        onClick={this.handleTelephoneClick}
+                    >
                         <img src={phoneIcon} alt='phone' className='PerInfo__icon' />
                         {!showTelephoneInput && (
                             <p

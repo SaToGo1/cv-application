@@ -24,10 +24,10 @@ class Education extends Component {
 
     handleDelete = (e) => {
         let id = e.target.getAttribute('idvalue');
-        let testing = e.target.getAttribute('testing');
-        console.log(e.target)
-        console.log('hi');
-        console.log(`id: ${id} || testong: ${testing}`);
+        
+        this.setState({
+            EducationUnitArray: this.state.EducationUnitArray.filter(obj => obj.id !== id),
+        })
     }
 
     render(){

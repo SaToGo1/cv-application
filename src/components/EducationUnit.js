@@ -36,9 +36,8 @@ class EducationUnit extends Component {
                         className='Edu__deleteButton'
                         onClick={this.handleDelete}
                         idvalue={this.id}
-                        testing="hi"
-                        >
-                            DELETE
+                    >
+                        DELETE
                     </button>
                 </div>
             </div>

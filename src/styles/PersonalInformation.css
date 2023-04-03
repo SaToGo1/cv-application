@@ -24,11 +24,16 @@
             cursor: pointer;
         }
 
+            .PerInfo__name:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+            }
+
         .PerInfo__Input {
             align-self: center;
         }
 
     .PerInfo__titleDiv {
+        display: flex;
         margin-top: 20px;
     }
     
@@ -40,6 +45,10 @@
             font-size: 35px;
 
             cursor: pointer;
+        }
+
+        .PerInfo__title:hover {
+            box-shadow: 0 1px 0 0 var(--color-teal);
         }
 
 .PerInfo__leftSide {
@@ -62,4 +71,8 @@
         gap: 10px;
 
         cursor: pointer;
+    }
+
+    .PerInfo__leftSide p:hover {
+        box-shadow: 0 2px 0 0 var(--color-teal);
     }

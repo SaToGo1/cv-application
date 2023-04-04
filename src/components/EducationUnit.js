@@ -18,7 +18,7 @@ class EducationUnit extends Component {
 
         return (
             <div className='Edu__unit'>
-                <div>
+                <div className='Edu__left'>
                     <h4 className='margin0 Edu__city'>{this.city}</h4>
                     <div className='Edu__dateDiv'>
                         <p className='margin0'>{this.date1}</p>
@@ -26,7 +26,7 @@ class EducationUnit extends Component {
                         <p className='margin0'>{this.date2}</p>
                     </div>
                 </div>
-                <div>
+                <div className='Edu__right'>
                     <h3 className='Edu__sectionTitle'>{this.universityTitle}</h3>
                     <p className='Edu__sectionSubTitle'>{this.degreeTitle}</p>
                     <p className='Edu__description'>{this.description}</p>

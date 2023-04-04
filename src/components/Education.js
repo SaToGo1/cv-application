@@ -107,7 +107,7 @@ class Education extends Component {
                             <div>
                                 <div>
                                     <label htmlFor="Edu__universityName">University Name</label>
-                                    <input type="text" name="Edu__universityName" id="Edu__universityName" required />
+                                    <input type="text" name="Edu__universityName" id="Edu__universityName" />
                                 </div>
                                 <div>
                                     <label htmlFor="Edu__degreeTitle">Degree Title</label>

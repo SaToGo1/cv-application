@@ -168,7 +168,7 @@ class PersonalInformation extends Component {
                             <input 
                                 type='text' 
                                 autoFocus 
-                                className='PerInfo__Input' 
+                                className='PerInfo__Input PerInfo__editName' 
                                 value={name}
                                 onChange={this.handleNameChange}
                                 onBlur={this.handleFocusOut}
@@ -190,7 +190,7 @@ class PersonalInformation extends Component {
                             <input 
                                 type='text' 
                                 autoFocus 
-                                className='PerInfo__Input' 
+                                className='PerInfo__Input PerInfo__editName' 
                                 value={surname}
                                 onChange={this.handleSurNameChange}
                                 onBlur={this.handleFocusOut}
@@ -212,7 +212,7 @@ class PersonalInformation extends Component {
                             <input
                                 type='text' 
                                 autoFocus 
-                                className='PerInfo__Input'
+                                className='PerInfo__Input PerInfo__editTitle'
                                 value={title}
                                 onChange={this.handleTitleChange}
                                 onBlur={this.handleFocusOut}
@@ -238,7 +238,7 @@ class PersonalInformation extends Component {
                             <input
                                 type='text' 
                                 autoFocus 
-                                className='PerInfo__Input'
+                                className='PerInfo__Input perInfo__editMailTelephone'
                                 value={mail}
                                 onChange={this.handleMailChange}
                                 onBlur={this.handleFocusOut}

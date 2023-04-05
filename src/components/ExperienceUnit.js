@@ -6,6 +6,8 @@ class ExperienceUnit extends Component {
 
         this.state = {
             showCityInput: false,
+            showDate1Input: false,
+            showDate2Input: false,
         }
 
         this.props = props
@@ -18,12 +20,24 @@ class ExperienceUnit extends Component {
                 showCityInput: true,
             })
         }
+        else if(who === 'date1'){
+            this.setState({
+                showDate1Input: true,
+            })
+        }
+        else if( who === 'date2' ) {
+            this.setState({
+                showDate2Input: true,
+            })
+        }
     }
 
     handleKeyDown = (e) => {
         if(e.key === 'Enter') {
             this.setState ({
                 showCityInput: false,
+                showDate1Input: false,
+                showDate2Input: false,
             })
         }
     }
@@ -31,6 +45,8 @@ class ExperienceUnit extends Component {
     handleFocusOut = () => {
         this.setState ({
             showCityInput: false,
+            showDate1Input: false,
+            showDate2Input: false,
         })
     }
 
@@ -47,7 +63,11 @@ class ExperienceUnit extends Component {
     }
 
     render() {
-        const { showCityInput } = this.state;
+        const { 
+            showCityInput, 
+            showDate1Input,
+            showDate2Input,
+         } = this.state;
         this.actualizeProps(this.props);
 
         return (
@@ -77,9 +97,53 @@ class ExperienceUnit extends Component {
                     )}
 
                     <div className='Edu__dateDiv'>
-                        <p className='margin0 Edu__date1'>{this.date1}</p>
+                        {!showDate1Input && (
+                            <p 
+                                className='margin0 Edu__date1'
+                                onClick={this.handleClick}
+                                who='date1'
+                            >
+                                {this.date1}
+                            </p>
+                        )}
+
+                        {showDate1Input && (
+                           <input 
+                           type='text'
+                           who='date1'
+                           id={this.id}
+                           className='EduEdit__input EduEdit__date'
+                           autoFocus
+                           value={this.date1}
+                           onChange={this.handleChange}
+                           onBlur={this.handleFocusOut}
+                           onKeyDown={this.handleKeyDown}
+                       /> 
+                        )}
                         <p className='margin0'> - </p>
-                        <p className='margin0 Edu__date2'>{this.date2}</p>
+                        {!showDate2Input && (
+                            <p 
+                                className='margin0 Edu__date2'
+                                onClick={this.handleClick}
+                                who='date2'
+                            >
+                                {this.date2}
+                            </p>
+                        )}
+
+                        {showDate2Input && (
+                           <input 
+                           type='text'
+                           who='date2'
+                           id={this.id}
+                           className='EduEdit__input EduEdit__date'
+                           autoFocus
+                           value={this.date2}
+                           onChange={this.handleChange}
+                           onBlur={this.handleFocusOut}
+                           onKeyDown={this.handleKeyDown}
+                            /> 
+                        )}
                     </div>
                 </div>
                 <div className='Edu__right'>

@@ -63,20 +63,23 @@ class Experience extends Component {
     }
 
     handleChange = (e) => {
-        console.log('estoy dentro')
         let who = e.target.getAttribute('who');
         let id = e.target.getAttribute('id');
+
+        // Search in the array fot the instance of experience unit that has 
+        // the same id as we get from the event target, and change the value
+        // of the target state (city, date1, ...) for the new one as we change
+        // it.
         let ExperienceUnitArrayUpdated = this.state.ExperienceUnitArray.map(
             (obj) => {
                 if(obj.id === id){
                     obj[`${who}`] = e.target.value;
-                    console.log('estoy dentrisimo')
                     return obj;
                 }
 
                 return obj;
         })
-        
+
         this.setState({
             ExperienceUnitArray: [...ExperienceUnitArrayUpdated],
         })

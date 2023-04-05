@@ -18,7 +18,7 @@
 
     .Edu__left {
         width: 120px;
-    }
+    } 
 
         .Edu__city {
             font-size: 1.2em;
@@ -32,17 +32,29 @@
         .Edu__dateDiv {
             display: flex;
             gap: 5px;
+
+            flex-wrap: wrap;
         }
 
-            .Edu__date1:hover {
-                box-shadow: 0 1px 0 0 var(--color-teal);
-                cursor: pointer;
+            .Edu__date1 {
+                max-width: 120px;
+                overflow-wrap: break-word;
             }
 
-            .Edu__date2:hover {
-                box-shadow: 0 1px 0 0 var(--color-teal);
-                cursor: pointer;
+                .Edu__date1:hover {
+                    box-shadow: 0 1px 0 0 var(--color-teal);
+                    cursor: pointer;
+                }
+
+            .Edu__date2 {
+                max-width: 120px;
+                overflow-wrap: break-word;
             }
+            
+                .Edu__date2:hover {
+                    box-shadow: 0 1px 0 0 var(--color-teal);
+                    cursor: pointer;
+                }
 
     .Edu__right {
         width: 700px;
@@ -197,10 +209,16 @@
     border: none;
     outline: none;
 
-    box-shadow: 0 1px 0 0 var(--color-teal);
+    box-shadow: 0 2px 0 0 var(--color-teal);
 }
 
 .EduEdit__city {
     font-size: 1.2em;
+    width: 120px;
+
+    font-weight: 600;
+}
+
+.EduEdit__date {
     width: 120px;
 }

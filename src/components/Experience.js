@@ -17,8 +17,7 @@ class Experience extends Component {
                 date2: "date2",
                 role: "Role",
                 company: "Company",
-                description: `Description
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.`,
+                description: `Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.`,
             }],
 
         }

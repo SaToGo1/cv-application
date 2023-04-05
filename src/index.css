@@ -3,6 +3,10 @@
 	--color-grey: #393E46;
 	--color-teal: #00ADB5;
 	--color-background: #EEEEEE;
+
+  --font-family: font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
 }
 
 body {

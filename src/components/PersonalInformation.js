@@ -262,7 +262,7 @@ class PersonalInformation extends Component {
                             <input
                                 type='text' 
                                 autoFocus 
-                                className='PerInfo__Input'
+                                className='PerInfo__Input perInfo__editMailTelephone'
                                 value={telephone}
                                 onChange={this.handleTelephoneChange}
                                 onBlur={this.handleFocusOut}

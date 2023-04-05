@@ -1,0 +1,22 @@
+.github{
+    height: 24px;
+}
+
+.github a{
+    color: black;
+    text-decoration: none; /* no underline */
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--color-teal);
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-grey);
+
+    height: 50px;
+}

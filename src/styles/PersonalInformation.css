@@ -7,21 +7,28 @@
 
 .PerInfo__rightSide {
     margin-left: var(--margin-left-resume);
+    margin-bottom: 50px;
 }
 
     .PerInfo__NameSurnameDiv {
         display: flex;
         gap: 20px;
         margin-top: 20px;
+
+        flex-wrap: wrap;
+        max-width: 800px;
     }
 
         .PerInfo__name {
             margin: 0;
             padding: 0;
             color: var(--color-teal);
+            max-width: 100%;
 
             font-size: 60px;
             cursor: pointer;
+
+            overflow-wrap: break-word;
         }
 
             .PerInfo__name:hover {
@@ -31,16 +38,20 @@
     .PerInfo__titleDiv {
         display: flex;
         margin-top: 20px;
+        max-width: 800px;
     }
     
         .PerInfo__title {
             margin: 0;
             padding: 0;
             color: var(--color-grey);
+            max-width: 100%;
 
             font-size: 35px;
 
             cursor: pointer;
+
+            overflow-wrap: break-word;
         }
 
         .PerInfo__title:hover {
@@ -63,6 +74,7 @@
     }
 
     .PerInfo__iconData {
+        max-width: 100%;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -73,8 +85,12 @@
     }
 
     .PerInfo__leftSide p {
+        max-width: 200px;
         margin: 0;
         margin-bottom: 0px;
+        overflow-wrap: break-word;
+
+        font-size: 1rem;
     }
 
     .PerInfo__leftSide p:hover {
@@ -90,6 +106,8 @@
     margin: 0;
 
     box-shadow: 0 2px 0 0 var(--color-teal);
+
+    font-family: var(--font-family);
 }
 
     .PerInfo__editName {
@@ -105,5 +123,6 @@
     }
 
     .perInfo__editMailTelephone {
-
+        width: 200px;
+        font-size: 1rem;
     }

@@ -16,8 +16,7 @@ class Education extends Component {
                 date2: "date2",
                 universityTitle: "UniversityTitle",
                 degreeTitle: "Degree Title",
-                description: `Description
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.`,
+                description: `Description Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc placerat augue id ante ullamcorper luctus.`,
             }],
 
         }

@@ -17,3 +17,18 @@
     margin: 0;
     color: var(--color-teal);
 }
+
+.headerDiv {
+    display: flex;
+    gap: 5px;
+}
+
+.headerGithub{
+    height: 37px;
+    width: 37px;
+}
+
+.githubA:link { text-decoration: none; }
+.githubA:visited { text-decoration: none; }
+.githubA:hover { text-decoration: none; }
+.githubA:active { text-decoration: none; }

@@ -27,7 +27,12 @@ class EducationUnit extends Component {
                     </div>
                 </div>
                 <div className='Edu__right'>
-                    <h3 className='Edu__sectionTitle'>{this.universityTitle}</h3>
+                    <h3 
+                        className='Edu__sectionTitle'
+                        onClick={this.handleClick}
+                    >
+                        {this.universityTitle}
+                    </h3>
                     <p className='Edu__sectionSubTitle'>{this.degreeTitle}</p>
                     <p className='Edu__description'>{this.description}</p>
                 </div>

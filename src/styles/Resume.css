@@ -15,7 +15,7 @@
 
 .Resume__body {
     width: 1240px;
-    height: 1754px;
+    min-height: 1754px;
     border: 1px solid black;
 
     display: grid;

@@ -91,36 +91,37 @@ class Experience extends Component {
                     </button>
                 )}
                 {showAddForm && (
-                    <div>
-                        <form onSubmit={this.handleSubmit}>
+                    <div className='Edu__formDiv'>
+                        <form onSubmit={this.handleSubmit} className='Edu__form'>
                             <div>
-                                <div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__city">city</label>
                                     <input type="text" name="Edu__city" id="Edu__city" />
                                 </div>
-                                <div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__date1">date1</label>
                                     <input type="text" name="Edu__date1" id="Edu__date1" />
-
+                                </div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__date1">date2</label>
                                     <input type="text" name="Edu__date2" id="Edu__date2" />
                                 </div>
                             </div>
                             <div>
-                                <div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__role">Role</label>
                                     <input type="text" name="Edu__role" id="Edu__role" />
                                 </div>
-                                <div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__company">Company</label>
                                     <input type="text" name="Edu__company" id="Edu__company" />
                                 </div>
-                                <div>
+                                <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__description">Description</label>
                                     <textarea type="text" name="Edu__description" id="Edu__description" />
                                 </div>
                             </div>
-                            <div>
+                            <div className="Eduform__buttonsDiv">
                                 <button type='submit'> Add </button>
                                 <button onClick={this.handleCancelButton} >
                                     Cancel

@@ -64,7 +64,7 @@ class Experience extends Component {
 
     handleChange = (e) => {
         let who = e.target.getAttribute('who');
-        let id = e.target.getAttribute('id');
+        let id = e.target.getAttribute('idvalue');
 
         // Search in the array fot the instance of experience unit that has 
         // the same id as we get from the event target, and change the value

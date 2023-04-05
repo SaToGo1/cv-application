@@ -8,6 +8,7 @@ class ExperienceUnit extends Component {
             showCityInput: false,
             showDate1Input: false,
             showDate2Input: false,
+            showRoleInput: false,
         }
 
         this.props = props
@@ -30,23 +31,30 @@ class ExperienceUnit extends Component {
                 showDate2Input: true,
             })
         }
+        else if( who === 'Role' ) {
+            this.setState({
+                showRoleInput: true,
+            })
+        }
     }
 
     handleKeyDown = (e) => {
         if(e.key === 'Enter') {
             this.setState ({
-                showCityInput: false,
+                showCityInput:  false,
                 showDate1Input: false,
                 showDate2Input: false,
+                showRoleInput:  false,
             })
         }
     }
 
     handleFocusOut = () => {
         this.setState ({
-            showCityInput: false,
+            showCityInput:  false,
             showDate1Input: false,
             showDate2Input: false,
+            showRoleInput:  false,
         })
     }
 
@@ -67,6 +75,7 @@ class ExperienceUnit extends Component {
             showCityInput, 
             showDate1Input,
             showDate2Input,
+            showRoleInput,
          } = this.state;
         this.actualizeProps(this.props);
 
@@ -86,7 +95,7 @@ class ExperienceUnit extends Component {
                         <input 
                             type='text'
                             who='city'
-                            id={this.id}
+                            idvalue={this.id}
                             className='EduEdit__input EduEdit__city'
                             autoFocus
                             value={this.city}
@@ -108,17 +117,17 @@ class ExperienceUnit extends Component {
                         )}
 
                         {showDate1Input && (
-                           <input 
-                           type='text'
-                           who='date1'
-                           id={this.id}
-                           className='EduEdit__input EduEdit__date'
-                           autoFocus
-                           value={this.date1}
-                           onChange={this.handleChange}
-                           onBlur={this.handleFocusOut}
-                           onKeyDown={this.handleKeyDown}
-                       /> 
+                            <input 
+                                type='text'
+                                who='date1'
+                                idvalue={this.id}
+                                className='EduEdit__input EduEdit__date'
+                                autoFocus
+                                value={this.date1}
+                                onChange={this.handleChange}
+                                onBlur={this.handleFocusOut}
+                                onKeyDown={this.handleKeyDown}
+                            /> 
                         )}
                         <p className='margin0'> - </p>
                         {!showDate2Input && (
@@ -132,22 +141,44 @@ class ExperienceUnit extends Component {
                         )}
 
                         {showDate2Input && (
-                           <input 
-                           type='text'
-                           who='date2'
-                           id={this.id}
-                           className='EduEdit__input EduEdit__date'
-                           autoFocus
-                           value={this.date2}
-                           onChange={this.handleChange}
-                           onBlur={this.handleFocusOut}
-                           onKeyDown={this.handleKeyDown}
+                            <input 
+                                type='text'
+                                who='date2'
+                                idvalue={this.id}
+                                className='EduEdit__input EduEdit__date'
+                                autoFocus
+                                value={this.date2}
+                                onChange={this.handleChange}
+                                onBlur={this.handleFocusOut}
+                                onKeyDown={this.handleKeyDown}
                             /> 
                         )}
                     </div>
                 </div>
                 <div className='Edu__right'>
-                    <h3 className='Edu__sectionTitle'>{this.role}</h3>
+                    {!showRoleInput && (
+                        <h3 
+                            className='Edu__sectionTitle'
+                            onClick={this.handleClick}
+                            who='Role'
+                        >
+                            {this.role}
+                        </h3>
+                    )}
+
+                    {showRoleInput && (
+                        <input 
+                            type='text'
+                            who='role'
+                            idvalue={this.id}
+                            className='EduEdit__input EduEdit__sectionTitle'
+                            autoFocus
+                            value={this.role}
+                            onChange={this.handleChange}
+                            onBlur={this.handleFocusOut}
+                            onKeyDown={this.handleKeyDown}
+                        /> 
+                    )}
                     <p className='Edu__sectionSubTitle'>{this.company}</p>
                     <p className='Edu__description'>{this.description}</p>
                 </div>

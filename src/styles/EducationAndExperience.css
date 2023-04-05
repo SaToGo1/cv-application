@@ -65,19 +65,36 @@
             margin-bottom: 0;
 
             font-size: 1.5em;
+            overflow-wrap: break-word;
         }
+
+            .Edu__sectionTitle:hover{
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
 
         .Edu__sectionSubTitle {
             margin: 0;
             margin-bottom: 15px;
 
             font-size: 1.2em;
+            overflow-wrap: break-word;
         }
+
+            .Edu__sectionSubTitle:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
 
         .Edu__description {
             margin: 0;
             overflow-wrap: break-word;
         }
+
+            .Edu__description:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
 
 .margin0 {
     margin: 0;
@@ -221,4 +238,8 @@
 
 .EduEdit__date {
     width: 120px;
+}
+
+.EduEdit__sectionTitle {
+
 }

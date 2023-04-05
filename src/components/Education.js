@@ -62,12 +62,25 @@ class Education extends Component {
 
     handleChange = (e) => {
         let who = e.target.getAttribute('who');
+        let id = e.target.getAttribute('idvalue');
 
-        if(who === 'city'){
-            this.setState({
-                city: e.target.value,
-            })
-        }
+        // Search in the array for the instance of experience unit that has 
+        // the same id as we get from the event target, and change the value
+        // of the event target this.state (city, date1, ...) for the new one 
+        // as we change value in the event.
+        let EducationUnitArrayUpdated = this.state.EducationUnitArray.map(
+            (obj) => {
+                if(obj.id === id){
+                    obj[`${who}`] = e.target.value;
+                    return obj;
+                }
+
+                return obj;
+        })
+
+        this.setState({
+            EducationUnitArray: [...EducationUnitArrayUpdated],
+        })
     }
 
     render(){

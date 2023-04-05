@@ -5,11 +5,12 @@ class ExperienceUnit extends Component {
         super(props)
 
         this.state = {
-            showCityInput:      false,
-            showDate1Input:     false,
-            showDate2Input:     false,
-            showRoleInput:      false,
-            showCompanyInput:   false,
+            showCityInput:          false,
+            showDate1Input:         false,
+            showDate2Input:         false,
+            showRoleInput:          false,
+            showCompanyInput:       false,
+            showDescriptionInput:   false,
 
         }
 
@@ -43,27 +44,34 @@ class ExperienceUnit extends Component {
                 showCompanyInput: true,
             })
         } 
+        else if( who === 'description' ) {
+            this.setState({
+                showDescriptionInput: true,
+            })
+        }
     }
 
     handleKeyDown = (e) => {
         if(e.key === 'Enter') {
             this.setState ({
-                showCityInput:      false,
-                showDate1Input:     false,
-                showDate2Input:     false,
-                showRoleInput:      false,
-                showCompanyInput:   false,
+                showCityInput:          false,
+                showDate1Input:         false,
+                showDate2Input:         false,
+                showRoleInput:          false,
+                showCompanyInput:       false,
+                showDescriptionInput:   false,
             })
         }
     }
 
     handleFocusOut = () => {
         this.setState ({
-            showCityInput:      false,
-            showDate1Input:     false,
-            showDate2Input:     false,
-            showRoleInput:      false,
-            showCompanyInput:   false,
+            showCityInput:          false,
+            showDate1Input:         false,
+            showDate2Input:         false,
+            showRoleInput:          false,
+            showCompanyInput:       false,
+            showDescriptionInput:   false,
         })
     }
 
@@ -86,6 +94,7 @@ class ExperienceUnit extends Component {
             showDate2Input,
             showRoleInput,
             showCompanyInput,
+            showDescriptionInput,
          } = this.state;
         this.actualizeProps(this.props);
 
@@ -125,7 +134,6 @@ class ExperienceUnit extends Component {
                                 {this.date1}
                             </p>
                         )}
-
                         {showDate1Input && (
                             <input 
                                 type='text'
@@ -139,7 +147,9 @@ class ExperienceUnit extends Component {
                                 onKeyDown={this.handleKeyDown}
                             /> 
                         )}
+
                         <p className='margin0'> - </p>
+
                         {!showDate2Input && (
                             <p 
                                 className='margin0 Edu__date2'
@@ -149,7 +159,6 @@ class ExperienceUnit extends Component {
                                 {this.date2}
                             </p>
                         )}
-
                         {showDate2Input && (
                             <input 
                                 type='text'
@@ -175,7 +184,6 @@ class ExperienceUnit extends Component {
                             {this.role}
                         </h3>
                     )}
-
                     {showRoleInput && (
                         <input 
                             type='text'
@@ -201,19 +209,41 @@ class ExperienceUnit extends Component {
                     )}
                     {showCompanyInput && (
                         <input 
-                        type='text'
-                        who='company'
-                        idvalue={this.id}
-                        className='EduEdit__input EduEdit__sectionSubTitle'
-                        autoFocus
-                        value={this.company}
-                        onChange={this.handleChange}
-                        onBlur={this.handleFocusOut}
-                        onKeyDown={this.handleKeyDown}
-                    /> 
+                            type='text'
+                            who='company'
+                            idvalue={this.id}
+                            className='EduEdit__input EduEdit__sectionSubTitle'
+                            autoFocus
+                            value={this.company}
+                            onChange={this.handleChange}
+                            onBlur={this.handleFocusOut}
+                            onKeyDown={this.handleKeyDown}
+                        /> 
                     )}
 
-                    <p className='Edu__description'>{this.description}</p>
+                    {!showDescriptionInput && (
+                        <p 
+                            className='Edu__description'
+                            onClick={this.handleClick}
+                            who='description'
+                        >
+                            {this.description}
+                        </p>
+                    )}
+                    {showDescriptionInput && (
+                        <textarea
+                            type='text'
+                            who='description'
+                            idvalue={this.id}
+                            className='EduEdit__input EduEdit__description'
+                            autoFocus
+                            value={this.description}
+                            onChange={this.handleChange}
+                            onBlur={this.handleFocusOut}
+                            onKeyDown={this.handleKeyDown}
+                        /> 
+                    )}
+                    
                 </div>
                 <div className='Edu__deleteButtonDiv'>
                     <button 

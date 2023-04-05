@@ -5,10 +5,12 @@ class ExperienceUnit extends Component {
         super(props)
 
         this.state = {
-            showCityInput: false,
-            showDate1Input: false,
-            showDate2Input: false,
-            showRoleInput: false,
+            showCityInput:      false,
+            showDate1Input:     false,
+            showDate2Input:     false,
+            showRoleInput:      false,
+            showCompanyInput:   false,
+
         }
 
         this.props = props
@@ -31,30 +33,37 @@ class ExperienceUnit extends Component {
                 showDate2Input: true,
             })
         }
-        else if( who === 'Role' ) {
+        else if( who === 'role' ) {
             this.setState({
                 showRoleInput: true,
             })
         }
+        else if( who === 'company' ) {
+            this.setState({
+                showCompanyInput: true,
+            })
+        } 
     }
 
     handleKeyDown = (e) => {
         if(e.key === 'Enter') {
             this.setState ({
-                showCityInput:  false,
-                showDate1Input: false,
-                showDate2Input: false,
-                showRoleInput:  false,
+                showCityInput:      false,
+                showDate1Input:     false,
+                showDate2Input:     false,
+                showRoleInput:      false,
+                showCompanyInput:   false,
             })
         }
     }
 
     handleFocusOut = () => {
         this.setState ({
-            showCityInput:  false,
-            showDate1Input: false,
-            showDate2Input: false,
-            showRoleInput:  false,
+            showCityInput:      false,
+            showDate1Input:     false,
+            showDate2Input:     false,
+            showRoleInput:      false,
+            showCompanyInput:   false,
         })
     }
 
@@ -76,6 +85,7 @@ class ExperienceUnit extends Component {
             showDate1Input,
             showDate2Input,
             showRoleInput,
+            showCompanyInput,
          } = this.state;
         this.actualizeProps(this.props);
 
@@ -160,7 +170,7 @@ class ExperienceUnit extends Component {
                         <h3 
                             className='Edu__sectionTitle'
                             onClick={this.handleClick}
-                            who='Role'
+                            who='role'
                         >
                             {this.role}
                         </h3>
@@ -179,7 +189,30 @@ class ExperienceUnit extends Component {
                             onKeyDown={this.handleKeyDown}
                         /> 
                     )}
-                    <p className='Edu__sectionSubTitle'>{this.company}</p>
+
+                    {!showCompanyInput && (
+                        <p 
+                            className='Edu__sectionSubTitle'
+                            onClick={this.handleClick}
+                            who='company'
+                        >
+                            {this.company}
+                        </p>
+                    )}
+                    {showCompanyInput && (
+                        <input 
+                        type='text'
+                        who='company'
+                        idvalue={this.id}
+                        className='EduEdit__input EduEdit__sectionSubTitle'
+                        autoFocus
+                        value={this.company}
+                        onChange={this.handleChange}
+                        onBlur={this.handleFocusOut}
+                        onKeyDown={this.handleKeyDown}
+                    /> 
+                    )}
+
                     <p className='Edu__description'>{this.description}</p>
                 </div>
                 <div className='Edu__deleteButtonDiv'>

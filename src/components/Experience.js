@@ -66,10 +66,10 @@ class Experience extends Component {
         let who = e.target.getAttribute('who');
         let id = e.target.getAttribute('idvalue');
 
-        // Search in the array fot the instance of experience unit that has 
+        // Search in the array for the instance of experience unit that has 
         // the same id as we get from the event target, and change the value
-        // of the target state (city, date1, ...) for the new one as we change
-        // it.
+        // of the event target this.state (city, date1, ...) for the new one 
+        // as we change value in the event.
         let ExperienceUnitArrayUpdated = this.state.ExperienceUnitArray.map(
             (obj) => {
                 if(obj.id === id){

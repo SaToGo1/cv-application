@@ -60,6 +60,16 @@ class Education extends Component {
         })
     }
 
+    handleChange = (e) => {
+        let who = e.target.getAttribute('who');
+
+        if(who === 'city'){
+            this.setState({
+                city: e.target.value,
+            })
+        }
+    }
+
     render(){
         const { EducationUnitArray, showAddForm } = this.state;
         return (
@@ -77,6 +87,7 @@ class Education extends Component {
                                 degreeTitle={obj.degreeTitle}
                                 description={obj.description}
                                 handleDelete={this.handleDelete}
+                                handleChange={this.handleChange}
                             />
                         )
                     })}
@@ -90,7 +101,8 @@ class Education extends Component {
                 )}
                 {showAddForm && (
                     <div className='Edu__formDiv'>
-                        <form onSubmit={this.handleSubmit} className="Edu__form">
+                        <button className='Edu__addButton'> Add </button>
+                        <form onSubmit={this.handleSubmit} className='Edu__form'>
                             <div>
                                 <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__city">city</label>

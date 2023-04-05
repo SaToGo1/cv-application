@@ -62,6 +62,26 @@ class Experience extends Component {
         })
     }
 
+    handleChange = (e) => {
+        console.log('estoy dentro')
+        let who = e.target.getAttribute('who');
+        let id = e.target.getAttribute('id');
+        let ExperienceUnitArrayUpdated = this.state.ExperienceUnitArray.map(
+            (obj) => {
+                if(obj.id === id){
+                    obj[`${who}`] = e.target.value;
+                    console.log('estoy dentrisimo')
+                    return obj;
+                }
+
+                return obj;
+        })
+        
+        this.setState({
+            ExperienceUnitArray: [...ExperienceUnitArrayUpdated],
+        })
+    }
+
     render(){
         const { ExperienceUnitArray, showAddForm } = this.state;
         return (
@@ -79,6 +99,7 @@ class Experience extends Component {
                                 company={obj.company}
                                 description={obj.description}
                                 handleDelete={this.handleDelete}
+                                handleChange={this.handleChange}
                             />
                         )
                     })}
@@ -92,6 +113,7 @@ class Experience extends Component {
                 )}
                 {showAddForm && (
                     <div className='Edu__formDiv'>
+                        <button className='Edu__addButton'> Add </button>
                         <form onSubmit={this.handleSubmit} className='Edu__form'>
                             <div>
                                 <div className='Edu__inputDiv'>
@@ -118,7 +140,7 @@ class Experience extends Component {
                                 </div>
                                 <div className='Edu__inputDiv'>
                                     <label htmlFor="Edu__description">Description</label>
-                                    <textarea type="text" name="Edu__description" id="Edu__description" />
+                                    <textarea type="text" name="Edu__description" id="Edu__description" className='Eduform__description'/>
                                 </div>
                             </div>
                             <div className="Eduform__buttonsDiv">

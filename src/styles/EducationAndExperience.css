@@ -24,10 +24,25 @@
             font-size: 1.2em;
         }
 
+            .Edu__city:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
+
         .Edu__dateDiv {
             display: flex;
             gap: 5px;
         }
+
+            .Edu__date1:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
+
+            .Edu__date2:hover {
+                box-shadow: 0 1px 0 0 var(--color-teal);
+                cursor: pointer;
+            }
 
     .Edu__right {
         width: 700px;
@@ -175,3 +190,17 @@
         .Eduform__buttonsDiv button:active {
             background-color: hsl(217, 10%, 35%);
         }
+
+
+.EduEdit__input {
+    background-color: var(--color-background);
+    border: none;
+    outline: none;
+
+    box-shadow: 0 1px 0 0 var(--color-teal);
+}
+
+.EduEdit__city {
+    font-size: 1.2em;
+    width: 120px;
+}

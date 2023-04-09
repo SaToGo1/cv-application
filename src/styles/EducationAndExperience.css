@@ -21,13 +21,14 @@
     } 
 
         .Edu__city {
+            min-height: 25px;
             font-size: 1.2em;
             max-width: 120px;
             overflow-wrap: break-word;
         }
 
             .Edu__city:hover {
-                box-shadow: 0 1px 0 0 var(--color-teal);
+                box-shadow: 0 2px 0 0 var(--color-teal);
                 cursor: pointer;
             }
 
@@ -39,22 +40,26 @@
         }
 
             .Edu__date1 {
+                min-height: 22px;
+                min-width: 40px;
                 max-width: 120px;
                 overflow-wrap: break-word;
             }
 
                 .Edu__date1:hover {
-                    box-shadow: 0 1px 0 0 var(--color-teal);
+                    box-shadow: 0 2px 0 0 var(--color-teal);
                     cursor: pointer;
                 }
 
             .Edu__date2 {
+                min-height: 22px;
+                min-width: 40px;
                 max-width: 120px;
                 overflow-wrap: break-word;
             }
             
                 .Edu__date2:hover {
-                    box-shadow: 0 1px 0 0 var(--color-teal);
+                    box-shadow: 0 2px 0 0 var(--color-teal);
                     cursor: pointer;
                 }
 
@@ -63,6 +68,8 @@
     }
 
         .Edu__sectionTitle {
+            min-height: 30px;
+
             margin-top: 0;
             margin-bottom: 0;
 
@@ -71,11 +78,13 @@
         }
 
             .Edu__sectionTitle:hover{
-                box-shadow: 0 1px 0 0 var(--color-teal);
+                box-shadow: 0 2px 0 0 var(--color-teal);
                 cursor: pointer;
             }
 
         .Edu__sectionSubTitle {
+            min-height: 25px;
+
             margin: 0;
             margin-bottom: 15px;
 
@@ -84,18 +93,20 @@
         }
 
             .Edu__sectionSubTitle:hover {
-                box-shadow: 0 1px 0 0 var(--color-teal);
+                box-shadow: 0 2px 0 0 var(--color-teal);
                 cursor: pointer;
             }
 
         .Edu__description {
+            min-height: 22px;
+
             margin: 0;
             overflow-wrap: break-word;
             padding: 2px;
         }
 
             .Edu__description:hover {
-                box-shadow: 0 1px 0 0 var(--color-teal);
+                box-shadow: 0 2px 0 0 var(--color-teal);
                 cursor: pointer;
             }
 
@@ -212,7 +223,7 @@
         border: 1px solid black;
         border-radius: 4px;   
         
-        box-shadow: inset 0 1px 0 0 hsl(217, 10%, 65%);
+        box-shadow: inset 0 2px 0 0 hsl(217, 10%, 65%);
     }
 
         .Eduform__buttonsDiv button:hover {

@@ -1,279 +1,257 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import '../styles/PersonalInformation.css'
 import atIcon from '../img/at.svg'
 import phoneIcon from '../img/phone.svg'
 
-class PersonalInformation extends Component {
-    constructor(){
-        super()
+const PersonalInformation = () => {
 
-        this.state = {
-            showNameInput: false,
-            showSurNameInput: false,
-            showTitleInput: false,
-            showMailInput: false,
-            showTelephoneInput: false,
-            information: {
-                name: "name",
-                surname: "surname",
-                title: "Title",
-                mail: "E-mail",
-                telephone: "telephone"
-            },
-        };
-    }
+    const [showNameInput, setShowNameInput] = useState(false);
+    const [showSurNameInput, setShowSurNameInput] = useState(false);
+    const [showTitleInput, setShowTitleInput] = useState(false);
+    const [showMailInput, setShowMailInput] = useState(false);
+    const [showTelephoneInput, setShowTelephoneInput] = useState(false);
+    
+    const [information, setInformation] = useState(
+        {
+            name: "name",
+            surname: "surname",
+            title: "Title",
+            mail: "E-mail",
+            telephone: "telephone"
+        }
+    )
 
 /*  =============== 
     Name Handlers
     =============== */
 
-        handleNameClick = () => {
-            this.setState ({
-                showNameInput: true,
-            })
+        const handleNameClick = () => {
+            setShowNameInput(true)
         }
 
-        handleNameChange = (e) => {
-            const information = this.state.information;
-            this.setState ({
-                information: {
+        const handleNameChange = (e) => {
+            setInformation(
+                {
                     ...information,
                     name: e.target.value,
-                },
-            })
+                }
+            )
         }
 
 /*  =============== 
     Surname Handlers
     =============== */
 
-        handleSurNameClick = () => {
-            this.setState ({
-                showSurNameInput: true,
-            })
+        const handleSurNameClick = () => {
+            setShowSurNameInput( true )
         }
 
-        handleSurNameChange = (e) => {
-            const information = this.state.information;
-            this.setState ({
-                information: {
+        const handleSurNameChange = (e) => {
+            setInformation(
+                {
                     ...information,
                     surname: e.target.value,
-                },
-            })
+                }
+            )
         }
 
 /*  =============== 
     Title Handlers
     =============== */
-        handleTitleClick = () => {
-            this.setState ({
-                showTitleInput: true,
-            })
+        const handleTitleClick = () => {
+            setShowTitleInput( true )
         }
 
-        handleTitleChange = (e) => {
-            const information = this.state.information;
-            this.setState ({
-                information: {
+        const handleTitleChange = (e) => {
+            setInformation(
+                {
                     ...information,
                     title: e.target.value,
-                },
-            })
+                }
+            )
         }
 
 /*  =============== 
     Mail Handlers
     =============== */
-        handleMailClick = () => {
-            this.setState ({
-                showMailInput: true,
-            })
+        const handleMailClick = () => {
+            setShowMailInput( true )
         }
 
-        handleMailChange = (e) => {
-            const information = this.state.information;
-            this.setState ({
-                information: {
+        const handleMailChange = (e) => {
+            setInformation(
+                {
                     ...information,
                     mail: e.target.value,
-                },
-            })
+                }
+            )
         }
 
 /*  =============== 
     Telephone Handlers
     =============== */
-        handleTelephoneClick = () => {
-            this.setState ({
-                showTelephoneInput: true,
-            })
+        const handleTelephoneClick = () => {
+            setShowTelephoneInput( true )
         }
 
-        handleTelephoneChange = (e) => {
-            const information = this.state.information;
-            this.setState ({
-                information: {
+        const handleTelephoneChange = (e) => {
+            setInformation(
+                {
                     ...information,
                     telephone: e.target.value,
-                },
-            })
+                }
+            )
         }
 
 /*  =============== 
     General Handlers
     =============== */
 
-    handleKeyDown = (e) => {
+    const handleKeyDown = (e) => {
         if(e.key === 'Enter') {
-            this.setState ({
-                showNameInput: false,
-                showSurNameInput: false,
-                showTitleInput: false,
-                showMailInput: false,
-                showTelephoneInput: false,
-            })
+            setShowNameInput( false )
+            setShowSurNameInput( false )
+            setShowTitleInput( false )
+            setShowMailInput( false )
+            setShowTelephoneInput( false )
         }
     }
 
-    handleFocusOut = () => {
-        this.setState ({
-            showNameInput: false,
-            showSurNameInput: false,
-            showTitleInput: false,
-            showMailInput: false,
-            showTelephoneInput: false,
-        })
+    const handleFocusOut = () => {
+        setShowNameInput( false )
+        setShowSurNameInput( false )
+        setShowTitleInput( false )
+        setShowMailInput( false )
+        setShowTelephoneInput( false )
     }
 
-    render(){
-        const { name, surname, title, mail, telephone } = this.state.information;
-        const { showNameInput, showSurNameInput, showTitleInput, showMailInput, showTelephoneInput } = this.state;
 
-        return(
-            <div className='PersonalInformation'>
-                <div className='PerInfo__rightSide'>
-                    <div className='PerInfo__NameSurnameDiv'>
-                        
-                        {!showNameInput && (
-                            <p 
-                                className='PerInfo__name'
-                                onClick={this.handleNameClick}
-                            >
-                                {name}
-                            </p>
-                        )}
+    const { name, surname, title, mail, telephone } = information;
 
-                        {showNameInput && (
-                            <input 
-                                type='text' 
-                                autoFocus 
-                                className='PerInfo__Input PerInfo__editName' 
-                                value={name}
-                                onChange={this.handleNameChange}
-                                onBlur={this.handleFocusOut}
-                                onKeyDown={this.handleKeyDown}
-                            />
-                        )}
-                        
+    return(
+        <div className='PersonalInformation'>
+            <div className='PerInfo__rightSide'>
+                <div className='PerInfo__NameSurnameDiv'>
+                    
+                    {!showNameInput && (
+                        <p 
+                            className='PerInfo__name'
+                            onClick={handleNameClick}
+                        >
+                            {name}
+                        </p>
+                    )}
 
-                        {!showSurNameInput && (
-                            <p 
-                                className='PerInfo__name'
-                                onClick={this.handleSurNameClick}
-                            >
-                                {surname}
-                            </p>
-                        )}
+                    {showNameInput && (
+                        <input 
+                            type='text' 
+                            autoFocus 
+                            className='PerInfo__Input PerInfo__editName' 
+                            value={name}
+                            onChange={handleNameChange}
+                            onBlur={handleFocusOut}
+                            onKeyDown={handleKeyDown}
+                        />
+                    )}
+                    
 
-                        {showSurNameInput && (
-                            <input 
-                                type='text' 
-                                autoFocus 
-                                className='PerInfo__Input PerInfo__editName' 
-                                value={surname}
-                                onChange={this.handleSurNameChange}
-                                onBlur={this.handleFocusOut}
-                                onKeyDown={this.handleKeyDown}
-                            />
-                        )}
-                    </div>
-                    <div className='PerInfo__titleDiv'>
-                        {!showTitleInput && (
-                            <p 
-                                className='PerInfo__title'
-                                onClick={this.handleTitleClick}
-                            >
-                                {title}
-                            </p>
-                        )}
+                    {!showSurNameInput && (
+                        <p 
+                            className='PerInfo__name'
+                            onClick={handleSurNameClick}
+                        >
+                            {surname}
+                        </p>
+                    )}
 
-                        {showTitleInput && (
-                            <input
-                                type='text' 
-                                autoFocus 
-                                className='PerInfo__Input PerInfo__editTitle'
-                                value={title}
-                                onChange={this.handleTitleChange}
-                                onBlur={this.handleFocusOut}
-                                onKeyDown={this.handleKeyDown}
-                            />
-                        )}
-                    </div>
+                    {showSurNameInput && (
+                        <input 
+                            type='text' 
+                            autoFocus 
+                            className='PerInfo__Input PerInfo__editName' 
+                            value={surname}
+                            onChange={handleSurNameChange}
+                            onBlur={handleFocusOut}
+                            onKeyDown={handleKeyDown}
+                        />
+                    )}
                 </div>
-                <div className='PerInfo__leftSide'>
-                    <div className='PerInfo__iconData'
-                        onClick={this.handleMailClick}
-                    >
-                        <img src={atIcon} alt='e-mail' className='PerInfo__icon' />
-                        {!showMailInput && (
-                            <p
-                                onClick={this.handleMailClick}
-                            >
-                                {mail}
-                            </p> 
-                        )}
+                <div className='PerInfo__titleDiv'>
+                    {!showTitleInput && (
+                        <p 
+                            className='PerInfo__title'
+                            onClick={handleTitleClick}
+                        >
+                            {title}
+                        </p>
+                    )}
 
-                        {showMailInput && (
-                            <input
-                                type='text' 
-                                autoFocus 
-                                className='PerInfo__Input perInfo__editMailTelephone'
-                                value={mail}
-                                onChange={this.handleMailChange}
-                                onBlur={this.handleFocusOut}
-                                onKeyDown={this.handleKeyDown}
-                            />
-                        )}
-                    </div>
-                    <div className='PerInfo__iconData'
-                        onClick={this.handleTelephoneClick}
-                    >
-                        <img src={phoneIcon} alt='phone' className='PerInfo__icon' />
-                        {!showTelephoneInput && (
-                            <p
-                                onClick={this.handleTelephoneClick}
-                            >
-                                {telephone}
-                            </p> 
-                        )}
-
-                        {showTelephoneInput && (
-                            <input
-                                type='text' 
-                                autoFocus 
-                                className='PerInfo__Input perInfo__editMailTelephone'
-                                value={telephone}
-                                onChange={this.handleTelephoneChange}
-                                onBlur={this.handleFocusOut}
-                                onKeyDown={this.handleKeyDown}
-                            />
-                        )}
-                    </div>
+                    {showTitleInput && (
+                        <input
+                            type='text' 
+                            autoFocus 
+                            className='PerInfo__Input PerInfo__editTitle'
+                            value={title}
+                            onChange={handleTitleChange}
+                            onBlur={handleFocusOut}
+                            onKeyDown={handleKeyDown}
+                        />
+                    )}
                 </div>
             </div>
-        )
-    }
+            <div className='PerInfo__leftSide'>
+                <div className='PerInfo__iconData'
+                    onClick={handleMailClick}
+                >
+                    <img src={atIcon} alt='e-mail' className='PerInfo__icon' />
+                    {!showMailInput && (
+                        <p
+                            onClick={handleMailClick}
+                        >
+                            {mail}
+                        </p> 
+                    )}
+
+                    {showMailInput && (
+                        <input
+                            type='text' 
+                            autoFocus 
+                            className='PerInfo__Input perInfo__editMailTelephone'
+                            value={mail}
+                            onChange={handleMailChange}
+                            onBlur={handleFocusOut}
+                            onKeyDown={handleKeyDown}
+                        />
+                    )}
+                </div>
+                <div className='PerInfo__iconData'
+                    onClick={handleTelephoneClick}
+                >
+                    <img src={phoneIcon} alt='phone' className='PerInfo__icon' />
+                    {!showTelephoneInput && (
+                        <p
+                            onClick={handleTelephoneClick}
+                        >
+                            {telephone}
+                        </p> 
+                    )}
+
+                    {showTelephoneInput && (
+                        <input
+                            type='text' 
+                            autoFocus 
+                            className='PerInfo__Input perInfo__editMailTelephone'
+                            value={telephone}
+                            onChange={handleTelephoneChange}
+                            onBlur={handleFocusOut}
+                            onKeyDown={handleKeyDown}
+                        />
+                    )}
+                </div>
+            </div>
+        </div>
+    )
+
 }
 
 export default PersonalInformation;
